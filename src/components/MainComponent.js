@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Navbar, NavbarBrand } from 'reactstrap';
 import Menu from './MenuComponent';
-import DishDetail from '/home/sarath/Desktop/react/confusion/src/components/DishDetailComponent.js';
+import About from './Aboutcomponent';
+import DishDetail from './DishDetailComponent';
 import { DISHES } from '../shared/dishes';
 import { COMMENTS } from '../shared/comments';
 import { PROMOTIONS } from '../shared/promotions';
@@ -57,6 +58,7 @@ class Main extends Component {
               <Route exact path='/contactus' component={Contact} />
               <Route exact path='/menu' component={() => <Menu dishes={this.state.dishes} />} />
               <Route path='/menu/:dishId' component={DishWithId} />
+    <Route path='/aboutus' component={() => <About leaders={this.state.leaders}/>}/>
               <Redirect to="/home" />
           </Switch>
         <Footer/>
